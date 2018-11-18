@@ -9,51 +9,55 @@ export class UserexamComponent implements OnInit {
 
   constructor() { }
   result:any[]=[
-    {id:1,value:2},
-    {id:2,value:2},
-    {id:3,value:2},
-    {id:4,value:2},
-    {id:5,value:2},
-    {id:6,value:2},
-    {id:7,value:2},
-    {id:8,value:2},
-    {id:9,value:2},
-    {id:10,value:2},
-    {id:11,value:2},
-    {id:12,value:2},
-    {id:13,value:2},
-    {id:14,value:2},
-    {id:15,value:2},
-    {id:16,value:2},
-    {id:17,value:2},
-    {id:18,value:2},
-    {id:19,value:2},
-    {id:20,value:2},
-    {id:21,value:2},
+    {id:1,value:0},
+    {id:2,value:0},
+    {id:3,value:0},
+    {id:4,value:0},
+    {id:5,value:0},
+    {id:6,value:0},
+    {id:7,value:0},
+    {id:8,value:0},
+    {id:9,value:0},
+    {id:10,value:0},
+    {id:11,value:0},
+    {id:12,value:0},
+    {id:13,value:0},
+    {id:14,value:0},
+    {id:15,value:0},
+    {id:16,value:0},
+    {id:17,value:0},
+    {id:18,value:0},
+    {id:19,value:0},
+    {id:20,value:0},
+    {id:21,value:0},
   ];
   changeActive1(item){
     item.show1="rb-tab-active";
     item.show2="";
     item.show3="";
     item.show4="";
+    item.value= 1;
   }
   changeActive2(item){
     item.show1="";
     item.show2="rb-tab-active";
     item.show3="";
     item.show4="";
+    item.value= 2;
   }
   changeActive3(item){
     item.show1="";
     item.show2="";
     item.show3="rb-tab-active";
     item.show4="";
+    item.value= 3;
   }
   changeActive4(item){
     item.show1="";
     item.show2="";
     item.show3="";
     item.show4="rb-tab-active";
+    item.value= 4;
   }
   minutes= 90;
   seconds=0;
@@ -89,6 +93,9 @@ export class UserexamComponent implements OnInit {
       };
     }, 1000);
   };
+  printResult(){
+    console.log(this.result);
+  }
   ngOnInit() {
   }
 

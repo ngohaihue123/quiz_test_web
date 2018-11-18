@@ -15,6 +15,7 @@ import { ShowinfoComponent } from './components/userfolder/userinfo/showinfo/sho
 import { UpdateinfoComponent } from './components/userfolder/userinfo/updateinfo/updateinfo.component';
 import { HistoryexamComponent } from './components/userfolder/userinfo/historyexam/historyexam.component';
 import { UpdatepassComponent } from './components/userfolder/userinfo/updatepass/updatepass.component';
+import { CreateuserComponent } from './components/teacher/createuser/createuser.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { UpdatepassComponent } from './components/userfolder/userinfo/updatepass
     ShowinfoComponent,
     UpdateinfoComponent,
     HistoryexamComponent,
-    UpdatepassComponent
+    UpdatepassComponent,
+    CreateuserComponent
   ],
   imports: [
     BrowserModule,
