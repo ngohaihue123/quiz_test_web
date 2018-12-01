@@ -1,5 +1,7 @@
+import { AuthService } from '../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../../services/home.service';
+// import { HomeService } from '../../../services/home.service';
+// import {AuthService }
 
 @Component({
   selector: 'app-home',
@@ -9,13 +11,15 @@ import { HomeService } from '../../../services/home.service';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private homeService: HomeService) { }
+  constructor(
+    private authService: AuthService
+
+  ) { }
 
   ngOnInit() {
   }
-  getAllTest() {
-    this.homeService.getAllTest().then(data =>{
-    })
+  logout() {
+    this.authService.logout();
   }
 
 }
