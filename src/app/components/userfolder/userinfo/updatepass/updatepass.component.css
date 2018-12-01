@@ -1,0 +1,183 @@
+*
+{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+body
+{
+	font-family:Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	margin:0;
+	padding:0;
+}
+.container-fluid{
+	padding: 0;
+}
+.container{
+	height: 800px;
+	background-color: #ECF0F1;
+}
+.header{
+	height: 75px;
+	background-color: #1BA39C;
+	line-height: 75px;
+	text-decoration: none;
+	border-bottom: 2px solid #22313F;
+}
+.rightheader{
+	width: 200px;
+	margin-left: 30px;
+	float: left;
+}
+.rightheader p{
+	float: right;
+	line-height: 75px;
+	margin: 0;
+	color: white;
+	font-family: 'Spicy Rice', cursive;
+	font-size: 18px;
+
+}
+.leftheader{
+	float: right;
+	height: 75px;
+}
+.leftheader ul{
+	margin: 0;
+	padding: 0;
+	height: 75px;
+}
+.leftheader li {
+	display: inline-block;
+	width: 150px;
+	margin-left: -5px;
+	height: 75px;
+	line-height: 80px;
+}
+.leftheader li a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	display: block;
+}
+.leftheader li:hover{
+	background-color: #36D7B7;
+}
+.footer{
+	background-color: #2C3E50;
+	color: white;
+	padding: 20px;
+}
+.footerleft{
+	float: left;
+}
+.footerright{
+	float: right;
+}
+.copyright{
+	clear: both;
+	width: 400px;
+	margin: 0 auto;
+}
+.leftside {
+	width: 30%;
+	height: 100%;
+	border-right: 4px solid #22313F;
+	padding: 10px 15px;
+	float: left;
+}
+.leftside h1{
+	color: #E26A6A;
+	padding: 5px;
+	border-bottom: 4px solid #F4B350;
+	margin-bottom: 40px;
+	font-size: 30px;
+}
+.personalInfo{
+	text-align: center;
+	color: #1E8BC3;
+	font-size: 18px;
+	margin-bottom: 40px;
+	height: 30px;
+	line-height: 30px;
+}
+.personalInfo a{
+	padding-bottom: 10px;
+	display: block;
+	text-decoration: none;
+}
+.personalInfo a:hover{
+	color: #3A539B;
+}
+.history{
+	text-align: center;
+	color: #1E8BC3;
+	font-size: 18px;
+    height: 30px;
+	line-height: 30px;
+		margin-bottom: 40px;
+}
+.active{
+	border-left: 3px solid #F5AB35;
+}
+.history a{
+	padding-bottom: 10px;
+	display: block;
+	text-decoration: none;
+}
+.history a:hover{
+	color: #3A539B;
+}
+.changePass{
+	text-align: center;
+	color: #1E8BC3;
+	font-size: 18px;
+	margin-bottom: 40px;
+	height: 30px;
+	line-height: 30px;
+}
+.changePass a{
+	padding-bottom: 10px;
+	display: block;
+	text-decoration: none;
+}
+.changePass a:hover{
+	color: #3A539B;
+}
+.rightside{
+	width: 70%;
+	height: 100%;
+	float: right;
+	padding-top: 50px;
+}
+.title{
+	color: #E26A6A;
+    text-align: center;
+    font-size: 34px;
+}
+.information {
+	width: 500px;
+	height: 400px;
+	background: white;
+	margin: 40px auto;
+	padding-left: 20px;
+	padding-top: 30px;
+	padding-right: 20px;
+	border-radius: 15px;
+}
+.information p{
+	margin-bottom: 40px;
+	font-size: 26px;
+}
+.information strong{
+	color: #E26A6A;
+}
+.panel{
+	margin: 30px 20px 20px 20px;
+}
+.panel button{
+	position: relative;
+	left: 200px;
+}

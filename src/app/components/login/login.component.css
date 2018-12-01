@@ -1,0 +1,139 @@
+*
+{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+body
+{
+	font-family:Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height:1.254em;
+	margin:0;
+	padding:0;
+}
+.container-fluid{
+	background-image:   linear-gradient(
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)
+		),
+	url("../../../assets/images/backgroundlogin.jpg"
+		);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.logo{
+	font-family: 'Mali', cursive;
+	margin: 30px;
+}
+.logo p{
+	color: white;
+	font-size: 30px;
+}
+.imageleft{
+	margin-top:150px;
+}
+.imageright{
+	float:right;
+	margin-top: 150px;
+}
+a{
+	text-decoration: none;
+}
+.intro{
+	color: white;
+	text-align: center;
+	margin-top: 50px;
+	font-family: 'Mali', cursive;
+	margin-bottom: 50px;
+	font-size: 12px;
+}
+.intro h1{
+    font-size: 38px;
+}
+.imageunder{
+	text-align: center;
+	margin-bottom: 80px;
+}
+.btnlogin{
+	margin-bottom: 200px;
+}
+
+.footer{
+	background-color: #2C3E50;
+	color: white;
+	padding: 20px;
+}
+.footerleft{
+	float: left;
+}
+.footerright{
+	float: right;
+}
+.copyright{
+	clear: both;
+	width: 400px;
+	margin: 0 auto;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)} 
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)} 
+	to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+.formlogin{
+	width: 500px;
+	height: 400px;
+	text-align: center;
+	padding: 30px;
+	background-color: #DADFE1;
+}
+.formlogin input{
+	margin-bottom: 20px;
+}
+.formlogin h1 {
+	color: #65C6BB;
+}
+.formlogin p{
+	color: #D64541;
+}

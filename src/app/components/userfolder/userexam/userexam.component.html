@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Exam</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="header">
+			<div class="rightheader">
+				<a routerLink="/user" href="">
+					<img src="../../../../assets/images/logo.png">
+					<p>Online ABCD</p>
+				</a>
+			</div>
+			<div class="leftheader">
+				<ul>
+					<li><a href="" routerLink="/user">Luyện đề</a></li>
+					<li><a href="">Tải đề lên</a></li>
+					<li><a href="" routerLink="/userInfo/showInfo">Thông tin cá nhân</a></li>
+					<li><a href="">Đăng xuất<span> <img src="../../../../assets/images/logout.png"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="leftside">
+				<div class="testinfo">
+					<h1>Đề thi vật lí lớp 10 trường chuyên Lương Thế Vinh</h1>
+					<p><span class="label label-info">Số câu hỏi: 1</span>,<span class="label label-danger">Thời gian: 90p</span>,<span
+						 class="label label-primary">Trình độ:Lớp 10</span>,<span class="label label-success">Ngày đăng: 21/10/2018</span></p>
+				</div>
+				<div class="instruction">
+					<h1>***Hướng dẫn làm bài</h1>
+					<ul>
+						<li>Thời gian tính ngay sau khi bấm bắt đầu</li>
+						<li>Bài thi kết thúc khi thời gian hết hoặc bấm nộp bài</li>
+						<li>Kết quả bài thi sẽ được lưu lại trong lịch sử làm bài</li>
+						<li>Nếu gặp vấn đề khi tải đề vui lòng load lại trang</li>
+					</ul>
+				</div>
+				<h2 id="startBtn">Nhấn <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block';document.getElementById('startBtn').style.display='none'"
+					 style="height: 50px;width: 160px;font-size: 24px;" (click)="startCountdown()">Bắt đầu</button> để làm bài</h2>
+				<div class="viewpdf" style="display: none" id="id01">
+					<embed src="../../../../assets/pdf/myPDF.pdf" width="1200" height="900">
+				</div>
+			</div>
+			<div class="rightside">
+				<h1>Chọn đáp án</h1>
+				<h3><span class="glyphicon glyphicon-time"></span>{{minutestr}}:{{secondstr}}</h3>
+				<div class="rb-box">
+
+					<!-- Radio Button Module -->
+					<div *ngFor="let item of result" id="rb-1" class="rb">
+						<span>Câu:{{item.id}}</span>
+						<div  class="rb-tab {{item.show1}}" data-value="1">
+							<div (click)="changeActive1(item)" class="rb-spot">
+								<span class="rb-txt">A</span>
+							</div>
+						</div>
+						<div class="rb-tab {{item.show2}}" data-value="2">
+							<div (click)="changeActive2(item)" class="rb-spot">
+								<span class="rb-txt">B</span>
+							</div>
+						</div>
+						<div class="rb-tab {{item.show3}}" data-value="3">
+							<div (click)="changeActive3(item)" class="rb-spot">
+								<span class="rb-txt">C</span>
+							</div>
+						</div>
+						<div class="rb-tab {{item.show4}}" data-value="4">
+							<div (click)="changeActive4(item)" class="rb-spot">
+								<span class="rb-txt">D</span>
+							</div>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="button-box">
+						<button id="nopbai" class="button trigger">Nộp bài</button>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footerleft">
+			<p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
+		</div>
+		<div class="footerright">
+			<p>Các thành viên bao gồm:</p>
+			<ul>
+				<li>Nguyễn Thế Cường</li>
+				<li>Huỳnh Trương Phúc</li>
+				<li>Ngô Hải Huế</li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<p>Copyright. OnlineABCD.com.vn</p>
+		</div>
+	</div>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js"></script>
+</body>
+
+</html>

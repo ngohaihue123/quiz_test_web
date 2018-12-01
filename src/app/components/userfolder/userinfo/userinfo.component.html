@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="header">
+			<div class="rightheader">
+				<a routerLink="/user" href="">
+					<img src="../../../../assets/images/logo.png">
+					<p>Online ABCD</p>
+				</a>
+			</div>
+			<div class="leftheader">
+				<ul>
+					<li><a href="" routerLink="/user">Luyện đề</a></li>
+					<li><a href="">Tải đề lên</a></li>
+					<li><a href="" routerLink="/userInfo/showInfo">Thông tin cá nhân</a></li>
+					<li><a href="">Đăng xuất<span> <img src="../../../../assets/images/logout.png"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div class="leftside">
+				<h1>Thông tin tài khoản</h1>
+				<div class="personalInfo {{a1}}">
+					<a (click)="triggerActive1()" [routerLink]="['/userInfo/showInfo']" routerLinkActive="['active']" ><span class="glyphicon glyphicon-user"></span>    Thông tin cá nhân</a>
+				</div>
+				<div class="history {{a2}}">
+					<a (click)="triggerActive2()" [routerLink]="['/userInfo/historyExam']" routerLinkActive="['active']"><span class="glyphicon glyphicon-check"></span>  Lịch sử làm bài</a>
+				</div>
+				<div class="changePass {{a3}}">
+					<a (click)="triggerActive3()" [routerLink]="['/userInfo/updatePass']" routerLinkActive="['active']"><span class="glyphicon glyphicon-wrench"></span>    Đổi mật khẩu</a>
+				</div>
+			</div>
+			<div class="rightside">
+        <router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footerleft">
+			<p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
+		</div>
+		<div class="footerright">
+			<p>Các thành viên bao gồm:</p>
+			<ul>
+				<li>Nguyễn Thế Cường</li>
+				<li>Huỳnh Trương Phúc</li>
+				<li>Ngô Hải Huế</li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<p>Copyright. OnlineABCD.com.vn</p>
+		</div>
+	</div>
+</body>
+</html>
