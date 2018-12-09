@@ -1,5 +1,6 @@
+import { UserService } from './services/user.service';
 import { StudentAddComponent } from './components/teacherfolder/student/student-add/student-add.component';
-import { UserComponent } from './components/teacherfolder/user/student.component';
+
 import { FileService } from './services/file.service';
 import { UpdateinfoComponent } from './components/userfolder/userinfo/updateinfo/updateinfo.component';
 import { UpdatepassComponent } from './components/userfolder/userinfo/updatepass/updatepass.component';
@@ -45,7 +46,8 @@ import { StudentComponent } from './components/teacherfolder/student/student/stu
     AppComponent,
     LoginComponent,
     LoginTeacherComponent,
-    UserComponent,
+    StudentAddComponent,
+    StudentComponent,
     UserinfoComponent,
     UserexamComponent,
     HistoryexamComponent,
@@ -90,7 +92,8 @@ import { StudentComponent } from './components/teacherfolder/student/student/stu
     AuthGuard,
     HttpService,
     AuthService,
-    FileService
+    FileService,
+    UserService
 
   ],
   bootstrap: [AppComponent],

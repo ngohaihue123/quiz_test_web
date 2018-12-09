@@ -20,10 +20,7 @@ import { LoginTeacherComponent } from '../components/teacherfolder/login/login-t
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: "full" },
     { path: 'login', component: LoginComponent },
-    { path: 'teacher', component: LoginTeacherComponent },
-    { path: 'teacher/login', component: LoginTeacherComponent },
-    { path: 'teacher/student', component: StudentComponent },
-    { path: 'teacher/student/add', component: StudentAddComponent },
+
     { path: 'user', component: HomeComponent },
     { path: 'test/1', component: UserexamComponent },
     {
@@ -43,7 +40,12 @@ const routes: Routes = [
             }
         ]
     },
-    { path: 'teacher/test', component: CreateTestComponent }
+    { path: 'teacher', component: LoginTeacherComponent },
+    { path: 'teacher/test', component: CreateTestComponent },
+    { path: 'teacher/login', component: LoginTeacherComponent },
+    { path: 'teacher/students', component: StudentComponent },
+    { path: 'teacher/students/student/:id', component: StudentAddComponent },
+    { path: 'teacher/students/add', component: StudentAddComponent },
 ];
 
 @NgModule({

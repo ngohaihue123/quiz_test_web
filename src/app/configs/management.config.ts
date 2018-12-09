@@ -73,10 +73,12 @@ export class ManagementConfig {
     public static UpdateContextUrl: string = `${AppConfig.ApiRoot}/admin/context`;
     public static DeleteContextUrl: string = `${AppConfig.ApiRoot}/admin/context`;
 
-    //spam promotion
-    public static FBSpamPromotionUrl = 'https://graph.facebook.com/v2.6/me/messages';
+
     //Tag
-    public static GetUserUrl: string = `${AppConfig.ApiRoot}/user`;
+    public static GetUserUrl: string = `${AppConfig.ApiRoot}/user/allUser`;
+    public static GetUserByIdUrl: string = `${AppConfig.ApiRoot}/user`;
+    public static UpdateUserURl: string = `${AppConfig.ApiRoot}/user/update`
+    public static AddUserUrl: string = `${AppConfig.ApiRoot}/user/add`
     public static GetTagByIdUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
     public static AddTagUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
     public static UpdateTagUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
