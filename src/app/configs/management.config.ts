@@ -1,30 +1,6 @@
 import { AppConfig } from "./app.config";
 export class ManagementConfig {
-    public static GetCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category`;
-    public static GetAllCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category/all`;
-    public static SaveCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category`;
-    public static DeleteCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category/delete`;
-    public static GetCategoryCityUrl: string = `${AppConfig.ApiRoot}/admin/category/city`;
-    public static GetFqCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category/fq`;
-    public static DownloadCategoryUrl: string = `${AppConfig.ApiRoot}/admin/category/download`;
 
-    public static GetIncompleteOrderUrl: string = `${AppConfig.ApiRoot}/admin/order/incomplete`;
-    public static NotifyIncompleteBookUrl: string = `${AppConfig.ApiRoot}/admin/order/incomplete/notifyBook`;
-    public static NotifyIncompleteShipUrl: string = `${AppConfig.ApiRoot}/admin/order/incomplete/notifyShip`;
-
-    public static GetProvidersUrl: string = `${AppConfig.ApiRoot}/admin/providers`;
-    public static GetProviderByIdUrl: string = `${AppConfig.ApiRoot}/admin/providers/get`;
-    public static GetProviderAccessTokenUrl: string = `${AppConfig.ApiRoot}/admin/providers/getToken`;
-    public static GetProviderMessCodeUrl: string = `${AppConfig.ApiRoot}/admin/providers/getMessCode`;
-    public static UpdateProviderByIdUrl: string = `${AppConfig.ApiRoot}/admin/providers/update`;
-    public static AddProviderUrl: string = `${AppConfig.ApiRoot}/admin/providers/add`;
-    public static DeleteProviderPermanentlyByIdUrl: string = `${AppConfig.ApiRoot}/admin/providers/deletePermanently`;
-    public static GenerateProviderByPlaceIdUrl: string = `${AppConfig.ApiRoot}/admin/providers/generateByPlaceId`;
-
-    public static GetAllCountryUrl: string = `${AppConfig.ApiRoot}/admin/country`;
-    public static GetCitiesUrl: string = `${AppConfig.ApiRoot}/admin/city`;
-    public static GetPlacesUrl: string = `${AppConfig.ApiRoot}/admin/place`;
-    public static AddCityUrl: string = `${AppConfig.ApiRoot}/admin/city`;
 
     public static GetMessagesUrl: string = `${AppConfig.ApiRoot}/admin/messages`;
     public static GetMessageByIdUrl: string = `${AppConfig.ApiRoot}/admin/message`;
@@ -51,7 +27,7 @@ export class ManagementConfig {
     public static UpdatePromotionByIdUrl: string = `${AppConfig.ApiRoot}/admin/promotions/update`;
     public static GetPromotionCardByIdUrl: string = `${AppConfig.ApiRoot}/admin/promotions/getCardById`;
 
-    public static UploadFileUrl: string = `${AppConfig.ApiRoot}/teacher/file/upload`;
+    public static UploadFileUrl: string = `${AppConfig.ApiRoot}/file/upload`;
     public static ReadFileUrl: string = `${AppConfig.ApiRoot}/admin/file/read`;
     public static UploadMultipleFilesUrl: string = `${AppConfig.ApiRoot}/admin/file/upload/multiple`;
 
@@ -79,9 +55,9 @@ export class ManagementConfig {
     public static GetUserByIdUrl: string = `${AppConfig.ApiRoot}/user`;
     public static UpdateUserURl: string = `${AppConfig.ApiRoot}/user/update`
     public static AddUserUrl: string = `${AppConfig.ApiRoot}/user/add`
-    public static GetTagByIdUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
-    public static AddTagUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
-    public static UpdateTagUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
-    public static DeleteTagUrl: string = `${AppConfig.ApiRoot}/admin/tag`;
-    public static GetAllTagsUrl: string = `${AppConfig.ApiRoot}/admin/allTags`
+    public static GetTestUrl: string = `${AppConfig.ApiRoot}/test/allTest`;
+    public static UpdateTestURl: string = `${AppConfig.ApiRoot}/test/update`
+    public static AddTestrUrl: string = `${AppConfig.ApiRoot}/test/add`;
+    public static GetTestByIdUrl: string = `${AppConfig.ApiRoot}/test`;
+
 }

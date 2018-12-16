@@ -6,90 +6,85 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userexam.component.css']
 })
 export class UserexamComponent implements OnInit {
-
+  result = [];
+  finalResult = [];
+  minutes = 90;
+  seconds = 0;
+  minutestr: string = this.minutes + "";
+  secondstr: string = "0" + this.seconds;
   constructor() { }
-  result:any[]=[
-    {id:1,value:2},
-    {id:2,value:2},
-    {id:3,value:2},
-    {id:4,value:2},
-    {id:5,value:2},
-    {id:6,value:2},
-    {id:7,value:2},
-    {id:8,value:2},
-    {id:9,value:2},
-    {id:10,value:2},
-    {id:11,value:2},
-    {id:12,value:2},
-    {id:13,value:2},
-    {id:14,value:2},
-    {id:15,value:2},
-    {id:16,value:2},
-    {id:17,value:2},
-    {id:18,value:2},
-    {id:19,value:2},
-    {id:20,value:2},
-    {id:21,value:2},
-  ];
-  changeActive1(item){
-    item.show1="rb-tab-active";
-    item.show2="";
-    item.show3="";
-    item.show4="";
+  ngOnInit() {
+    this.makeformResult(40);
   }
-  changeActive2(item){
-    item.show1="";
-    item.show2="rb-tab-active";
-    item.show3="";
-    item.show4="";
+
+  changeActive(item, value) {
+    item.show1 = "";
+    item.show2 = "";
+    item.show3 = "";
+    item.show4 = "";
+    switch (value) {
+      case 1:
+        item.show1 = "rb-tab-active";
+        break;
+      case 2:
+        item.show2 = "rb-tab-active";
+        break;
+      case 3:
+        item.show3 = "rb-tab-active";
+        break;
+      case 4:
+        item.show4 = "rb-tab-active";
+        break;
+    }
+    let tempAnwser = this.result.find(x => x.id == item.id);
+    if (tempAnwser) tempAnwser.value = value;
+    console.log(this.result);
   }
-  changeActive3(item){
-    item.show1="";
-    item.show2="";
-    item.show3="rb-tab-active";
-    item.show4="";
-  }
-  changeActive4(item){
-    item.show1="";
-    item.show2="";
-    item.show3="";
-    item.show4="rb-tab-active";
-  }
-  minutes= 90;
-  seconds=0;
-  minutestr:string=this.minutes+"";
-  secondstr:string="0"+this.seconds;
-  startCountdown(){
+
+  startCountdown() {
     var interval = setInterval(() => {
-      if(this.seconds==0){
-        this.seconds=59;
+      if (this.seconds == 0) {
+        this.seconds = 59;
         this.minutes--;
-      }else{
+      } else {
         this.seconds--;
       }
-      if(this.minutes<10){
-        this.minutestr="0"+this.minutes;
-      }else{
-        this.minutestr=""+this.minutes;
+      if (this.minutes < 10) {
+        this.minutestr = "0" + this.minutes;
+      } else {
+        this.minutestr = "" + this.minutes;
       }
-      if(this.seconds<10){
-        this.secondstr="0"+this.seconds
-      }else{
-        this.secondstr=""+this.seconds;
+      if (this.seconds < 10) {
+        this.secondstr = "0" + this.seconds
+      } else {
+        this.secondstr = "" + this.seconds;
       }
-  
-      if(this.minutes == 0&&this.seconds==0 ){
-        
+
+      if (this.minutes == 0 && this.seconds == 0) {
+
         // The code here will run when
         // the timer has reached zero.
-        
+
         clearInterval(interval);
         console.log('Ding!');
         alert("Hết giờ")
       };
     }, 1000);
   };
-  ngOnInit() {
+
+  makeformResult(numberQuesttion) {
+    for (let i = 1; i <= numberQuesttion; i++) {
+      this.result.push({ id: i, value: 0 })
+    }
+  }
+
+  submitTest() {
+    this.finalResult = this.result.map(function (x) {
+      return {
+        id: x.id,
+        value: x.value
+      }
+    })
   }
 
 }

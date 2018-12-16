@@ -1,3 +1,5 @@
+import { CreateTestComponent } from './components/teacherfolder/test/create-test.component';
+import { TestService } from './services/test.service';
 import { UserService } from './services/user.service';
 import { StudentAddComponent } from './components/teacherfolder/student/student-add/student-add.component';
 
@@ -36,9 +38,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserexamComponent } from './components/userfolder/userexam/userexam.component';
 import { ShowinfoComponent } from './components/userfolder/userinfo/showinfo/showinfo.component';
-import { CreateTestComponent } from './components/teacherfolder/create-test/create-test.component';
 import { LoginTeacherComponent } from './components/teacherfolder/login/login-teacher.component';
 import { StudentComponent } from './components/teacherfolder/student/student/student.component';
+import { TestComponent } from './components/teacherfolder/test/test/test.component';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { StudentComponent } from './components/teacherfolder/student/student/stu
     WaitingDirective,
     CreateTestComponent,
     StudentAddComponent,
-    StudentComponent
+    StudentComponent,
+    TestComponent
 
     // helpers
 
@@ -93,7 +96,8 @@ import { StudentComponent } from './components/teacherfolder/student/student/stu
     HttpService,
     AuthService,
     FileService,
-    UserService
+    UserService,
+    TestService
 
   ],
   bootstrap: [AppComponent],

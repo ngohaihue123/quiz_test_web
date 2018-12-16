@@ -17,7 +17,6 @@ export class StudentAddComponent implements OnInit {
 
   ngOnInit() {
     let studentId = this.activaticeRoute.snapshot.params.id;
-    console.log(studentId);
     if (studentId) {
       this.studentService.getStudentById(studentId).then(res => {
         this.student = res['data'];

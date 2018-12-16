@@ -1,6 +1,7 @@
+import { TestComponent } from './../components/teacherfolder/test/test/test.component';
 import { StudentComponent } from './../components/teacherfolder/student/student/student.component';
 import { StudentAddComponent } from './../components/teacherfolder/student/student-add/student-add.component';
-import { CreateTestComponent } from './../components/teacherfolder/create-test/create-test.component';
+import { CreateTestComponent } from './../components/teacherfolder/test/create-test.component';
 import { UpdatepassComponent } from './../components/userfolder/userinfo/updatepass/updatepass.component';
 import { HistoryexamComponent } from './../components/userfolder/userinfo/historyexam/historyexam.component';
 import { UpdateinfoComponent } from './../components/userfolder/userinfo/updateinfo/updateinfo.component';
@@ -41,7 +42,9 @@ const routes: Routes = [
         ]
     },
     { path: 'teacher', component: LoginTeacherComponent },
-    { path: 'teacher/test', component: CreateTestComponent },
+    { path: 'teacher/test/add', component: CreateTestComponent },
+    { path: 'teacher/tests', component: TestComponent },
+    { path: 'teacher/test/:id', component: CreateTestComponent },
     { path: 'teacher/login', component: LoginTeacherComponent },
     { path: 'teacher/students', component: StudentComponent },
     { path: 'teacher/students/student/:id', component: StudentAddComponent },

@@ -1,0 +1,40 @@
+<div>
+  <input type="file" (change)="uploadFile($event)">
+</div>
+<button type="button" class="btn btn-info" (click)="save()">Lưu</button>
+<div class="rightside">
+  <h1>Chọn đáp án</h1>
+  <h3><span class="glyphicon glyphicon-time"></span>{{minutestr}}:{{secondstr}}</h3>
+  <div class="rb-box">
+    <!-- Radio Button Module -->
+    <div *ngFor="let item of result" id="rb-1" class="rb">
+      <span>Câu:{{item.id}}</span>
+      <div class="rb-tab {{item.show1}}" data-value="1">
+        <div (click)="changeActive(item, 1)" class="rb-spot">
+          <span class="rb-txt">A</span>
+        </div>
+      </div>
+      <div class="rb-tab {{item.show2}}" data-value="2">
+        <div (click)="changeActive(item, 2)" class="rb-spot">
+          <span class="rb-txt">B</span>
+        </div>
+      </div>
+      <div class="rb-tab {{item.show3}}" data-value="3">
+        <div (click)="changeActive(item, 3)" class="rb-spot">
+          <span class="rb-txt">C</span>
+        </div>
+      </div>
+      <div class="rb-tab {{item.show4}}" data-value="4">
+        <div (click)="changeActive(item, 4)" class="rb-spot">
+          <span class="rb-txt">D</span>
+        </div>
+      </div>
+    </div>
+    <!-- Button -->
+    <div class="button-box">
+      <button id="nopbai" class="button trigger" (click)="submitTest()">Nộp bài</button>
+    </div>
+
+
+  </div>
+</div>
