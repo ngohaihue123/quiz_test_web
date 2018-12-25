@@ -28,15 +28,12 @@ export class StudentAddComponent implements OnInit {
   }
   save() {
     if (this.student._id) {
-      this.student.gmail = "chequanghuy@gmail.com";
       this.studentService.update(this.student).then(res => {
         if (res && res['success']) {
           console.log(res);
         }
       })
     } else {
-      this.student.name = "Che Quang Huy";
-      this.student.class = 10;
       this.studentService.add(this.student).then(res => {
         if (res && res['success']) {
           console.log(res);

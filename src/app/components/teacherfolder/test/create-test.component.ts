@@ -97,7 +97,11 @@ export class CreateTestComponent implements OnInit {
       }
       return x;
     })
-
+  }
+  //Ham ni dung de show cai nut luu lai ra nghe
+  showSaveBtn(){
+    document.getElementById("btn1").style.display ="none";
+    document.getElementById("btn2").style.display="block";
   }
 
   changeActive(item, value) {

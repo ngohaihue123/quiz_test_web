@@ -1,10 +1,22 @@
-<div>
-  <input type="file" (change)="uploadFile($event)">
+
+<div class="leftside">
+  <form style="width: 40% ; margin: 0 auto;">
+  <h1>Nhập thông tin đề thi</h1>
+  <div>
+      <input type="file" (change)="uploadFile($event)">
+  </div>
+  <label>Nhập tiêu đề</label>
+  <input type="text" class="form-control" [(ngModel)]="test.title" ><br>
+  <label>Nhập thời gian</label>
+  <input type="text" class="form-control"  [(ngModel)]="test.time"><br>
+  <label>Nhập số câu hỏi</label>
+  <input type="text" class="form-control"  [(ngModel)]="test.answer"><br>
+  <button id="btn1" class="btn btn-lag btn-primary center-block" (click)="showSaveBtn()">Nhập đán án</button>
+  <input id="btn2" type="submit" value="Lưu lại" class="btn btn-lg btn-danger" style="display: none;">
+  </form>
 </div>
-<button type="button" class="btn btn-info" (click)="save()">Lưu</button>
 <div class="rightside">
   <h1>Chọn đáp án</h1>
-  <h3><span class="glyphicon glyphicon-time"></span>{{minutestr}}:{{secondstr}}</h3>
   <div class="rb-box">
     <!-- Radio Button Module -->
     <div *ngFor="let item of result" id="rb-1" class="rb">
@@ -32,7 +44,6 @@
     </div>
     <!-- Button -->
     <div class="button-box">
-      <button id="nopbai" class="button trigger" (click)="submitTest()">Nộp bài</button>
     </div>
 
 
