@@ -5,6 +5,7 @@ import { FileService } from './../../../services/file.service';
 import { Component, OnInit } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-create-test',
   templateUrl: './create-test.component.html',
@@ -46,6 +47,7 @@ export class CreateTestComponent implements OnInit {
         .then(res => {
           this.test.class = 10;
           this.test.title = "Kiem tra thu";
+          // numberquesttion// 
           this.test.fileTest = res.data;
           this.test.answer = this.getResult(this.result);
           this.testService.add(this.test).then(res => {
@@ -136,4 +138,5 @@ export class CreateTestComponent implements OnInit {
       }
     })
   }
+
 }

@@ -14,7 +14,7 @@ export class UserexamComponent implements OnInit {
   secondstr: string = "0" + this.seconds;
   constructor() { }
   ngOnInit() {
-    this.makeformResult(40);
+    this.makeformResult(20);
   }
 
   changeActive(item, value) {

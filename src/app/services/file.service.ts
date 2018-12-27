@@ -1,16 +1,15 @@
 import { Res } from '../models/res.model';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
-
-
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { ManagementConfig } from '../configs/management.config';
-
 import { HttpService } from '../services/http.service';
-
+let oReq = new XMLHttpRequest();
+oReq.responseType = "arraybuffer";
 @Injectable()
 export class FileService {
 
-    constructor(private httpService: HttpService) { }
+    constructor(private httpService: HttpService, private http: Http) { }
 
     readFile(formData: FormData, type: string): Promise<Res> {
         let bgUrl = ManagementConfig.ReadFileUrl + '?type=' + type;
@@ -34,6 +33,10 @@ export class FileService {
             let result = res.json();
             return result;
         });
+    }
+    getFile(fileName): Promise<any> {
+        let fileUrl = ManagementConfig.GetFileUrl + '?filename=' + fileName;
+        return this.httpService.get(fileUrl);
     }
 
     private handleError(error: any): Promise<any> {

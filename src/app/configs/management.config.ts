@@ -28,6 +28,7 @@ export class ManagementConfig {
     public static GetPromotionCardByIdUrl: string = `${AppConfig.ApiRoot}/admin/promotions/getCardById`;
 
     public static UploadFileUrl: string = `${AppConfig.ApiRoot}/file/upload`;
+    public static GetFileUrl: string = `${AppConfig.ApiRoot}/file/file`;
     public static ReadFileUrl: string = `${AppConfig.ApiRoot}/admin/file/read`;
     public static UploadMultipleFilesUrl: string = `${AppConfig.ApiRoot}/admin/file/upload/multiple`;
 
