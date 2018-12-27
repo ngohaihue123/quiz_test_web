@@ -38,9 +38,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserexamComponent } from './components/userfolder/userexam/userexam.component';
 import { ShowinfoComponent } from './components/userfolder/userinfo/showinfo/showinfo.component';
+<<<<<<< HEAD
 import { LoginTeacherComponent } from './components/teacherfolder/login/login-teacher.component';
 import { StudentComponent } from './components/teacherfolder/student/student/student.component';
 import { TestComponent } from './components/teacherfolder/test/test/test.component';
+=======
+import { UpdateinfoComponent } from './components/userfolder/userinfo/updateinfo/updateinfo.component';
+import { HistoryexamComponent } from './components/userfolder/userinfo/historyexam/historyexam.component';
+import { UpdatepassComponent } from './components/userfolder/userinfo/updatepass/updatepass.component';
+import { CreateuserComponent } from './components/teacher/createuser/createuser.component';
+>>>>>>> 8ec126161ed8bbf3e6ffa5f92aa05bb4ea60d5a3
 
 
 @NgModule({
@@ -56,6 +63,7 @@ import { TestComponent } from './components/teacherfolder/test/test/test.compone
     UpdatepassComponent,
     ShowinfoComponent,
     UpdateinfoComponent,
+<<<<<<< HEAD
     HomeComponent,
 
 
@@ -71,6 +79,11 @@ import { TestComponent } from './components/teacherfolder/test/test/test.compone
 
     // helpers
 
+=======
+    HistoryexamComponent,
+    UpdatepassComponent,
+    CreateuserComponent
+>>>>>>> 8ec126161ed8bbf3e6ffa5f92aa05bb4ea60d5a3
   ],
   imports: [
     BrowserModule,
