@@ -3,12 +3,7 @@
     <h1>Nhập thông tin đề thi</h1>
     <label>Nhập tiêu đề</label>
     <input id="title" name="title" type="text" class="form-control" [(ngModel)]="test.title"><br>
-    <label>Chọn lớp</label>
-    <div class="row">
-      <label class="checkbox-inline"><input type="checkbox" value="10" checked>Lớp 10</label>
-      <label class="checkbox-inline"><input type="checkbox" value="11">Lớp 11</label>
-      <label class="checkbox-inline"><input type="checkbox" value="12">Lớp 12</label>
-    </div>
+    <input type="number" name="numberQuestion" class="form-control" [(ngModel)]="test.class">
     <label>Nhập thời gian</label>
     <input type="text" name="time" class="form-control" [(ngModel)]="test.time"><br>
     <label>Nhập số câu hỏi</label>
@@ -18,7 +13,6 @@
     <input type="file" (change)="uploadFile($event)">
     <button type="button" class="btn btn-info" (click)="save()">Lưu</button>
   </form>
-
 </div>
 
 <div class="rightside">

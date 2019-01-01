@@ -13,6 +13,8 @@ import { StudentTest } from '../,,/../../../models/student_test.model'
   styleUrls: ['./userexam.component.css']
 })
 export class UserexamComponent implements OnInit {
+  displayResult: boolean = false;
+  data: any;
   result = [];
   finalResult = [];
   minutes = 0;
@@ -43,6 +45,7 @@ export class UserexamComponent implements OnInit {
   }
 
   changeActive(item, value) {
+    if (this.displayResult) return;
     item.show1 = "";
     item.show2 = "";
     item.show3 = "";
@@ -96,6 +99,10 @@ export class UserexamComponent implements OnInit {
     }, 1000);
   };
 
+  doTest() {
+    this.startCountdown();
+
+  }
   makeformResult(numberQuesttion) {
     for (let i = 1; i <= numberQuesttion; i++) {
       this.result.push({ id: i, value: 0 })
@@ -112,8 +119,43 @@ export class UserexamComponent implements OnInit {
     this.studentTest.answer = this.finalResult;
     this.studentTest.student = JSON.parse(localStorage.getItem('i')).idStudent;
     this.studentTest.test = this.test._id;
-    this.studentTestService.add(this.studentTest).then(data => {
+    this.studentTestService.add(this.studentTest).then(result => {
+      this.data = result;
+      this.showAnwser(result.data.studentAnswer, result.data.testAnswer);
+      this.displayResult = true;
     })
+  }
+
+
+  showAnwser(stuentAnwsers, testAnswers) {
+    this.result = testAnswers.map(function (x) {
+      switch (x.value) {
+        case 0:
+          break;
+        case 1:
+          x.show1 = "rb-tab-active-2";
+          break;
+        case 2:
+          x.show2 = "rb-tab-active-2";
+          break;
+        case 3:
+          x.show3 = "rb-tab-active-2";
+          break;
+        case 4:
+          x.show4 = "rb-tab-active-2";
+          break;
+      }
+      return x;
+    })
+    let i;
+    for (i = 0; i < this.result.length; i++) {
+      console.log(stuentAnwsers[i].value);
+      if (stuentAnwsers[i].value == 1) this.result[i].show1 = "rb-tab-active";
+      if (stuentAnwsers[i].value == 2) this.result[i].show2 = "rb-tab-active";
+      if (stuentAnwsers[i].value == 3) this.result[i].show3 = "rb-tab-active";
+      if (stuentAnwsers[i].value == 4) this.result[i].show4 = "rb-tab-active";
+
+    }
   }
 
 }

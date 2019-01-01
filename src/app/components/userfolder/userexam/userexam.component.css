@@ -172,7 +172,10 @@ body
 	background: rgba(0,0,0,.35);
 	border: 2px solid rgba(243,49,128,.6);
   }
-  
+  .rb-tab-active-2 .rb-spot {
+	background: rgba(235, 3, 3, 0.479);
+	border: 2px solid rgba(12, 48, 209, 0.144);
+  }
   /* Submit Button */
   .button-box {
 	padding: 10px 0;

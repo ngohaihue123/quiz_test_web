@@ -32,7 +32,7 @@
 							gian: {{test.time}}</span>,<span class="label label-primary">Trình độ:Lớp 10</span>,<span class="label label-success">Ngày
 							đăng:{{test.dateCreate}}</span></p>
 				</div>
-				<div class="instruction">
+				<div class="instruction" *ngIf="!displayResult">
 					<h1>***Hướng dẫn làm bài</h1>
 					<ul>
 						<li>Thời gian tính ngay sau khi bấm bắt đầu</li>
@@ -41,14 +41,19 @@
 						<li>Nếu gặp vấn đề khi tải đề vui lòng load lại trang</li>
 					</ul>
 				</div>
+				<div class="instruction" *ngIf="displayResult">
+					<h1>Kết cquả làm bài</h1>
+					<h1>Số câu trả lời đúng là: {{data?.data.result}}</h1>
+				</div>
 				<h2 id="startBtn">Nhấn <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block';document.getElementById('startBtn').style.display='none'"
 					 style="height: 50px;width: 160px;font-size: 24px;" (click)="startCountdown()">Bắt đầu</button> để làm bài</h2>
 				<div class="viewpdf" style="display: none" id="id01">
-					<embed src="../../../../assets/pdf/myPDF.pdf" width="1200" height="1800">
+					<embed src="../../../../assets/pdf/myPDF.pdf" width="1000" height="1800">
 				</div>
 			</div>
 			<div class="rightside">
-				<h1>Chọn đáp án</h1>
+				<h1 *ngIf="displayResult">Chọn đáp án</h1>
+				<h1 *ngIf="!displayResult">Chọn đáp án</h1>
 				<h3><span class="glyphicon glyphicon-time"></span>{{minutestr}}:{{secondstr}}</h3>
 				<div class="rb-box">
 					<!-- Radio Button Module -->
@@ -77,7 +82,7 @@
 					</div>
 					<!-- Button -->
 					<div class="button-box">
-						<button id="nopbai" class="button trigger" (click)="submitTest()">Nộp bài</button>
+						<button id="nopbai" class="button trigger" (click)="submitTest()" ng-disabled="!displayResult">Nộp bài</button>
 					</div>
 
 

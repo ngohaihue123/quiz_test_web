@@ -1,4 +1,14 @@
-<p>
-  student-add works!
-</p>
-<button type="button" class="btn btn-primary" (click)="save()">Primary</button>
+<div class="leftside">
+  <form style="width: 40% ; margin: 0 auto;">
+    <h1>Thông tin học sinh</h1>
+    <label>Tên học sinh</label>
+    <input id="title" name="title" type="text" class="form-control" [(ngModel)]="student.name" required><br>
+    <label>Gmail</label>
+    <input type="text" name="password" class="form-control" [(ngModel)]="student.gmail" required>
+    <label>Mật khẩu</label>
+    <input type="password" name="time" class="form-control" [(ngModel)]="student.password" required><br>
+    <label>Lớp</label>
+    <input type="number" name="class" class="form-control" [(ngModel)]="student.class" required>
+    <button type="button" class="btn btn-info" (click)="save()">Lưu</button>
+  </form>
+</div>

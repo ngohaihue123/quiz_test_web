@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="rightside">
+    <h1><span class="label label-success">Lịch sử thi</span></h1>
+    <div class="listtest">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Đề thi</th>
+            <th scope="col">Ngày Làm bài</th>
+            <th scope="col">Kết quả </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let test of historyTests ;let i = index;">
+            <th scope="row">{{i}}</th>
+            <td>{{test.test.title}}</td>
+            <td>{{test.dateCreate}}</td>
+            <td>{{test.result}}/{{test.test.numberQuestion}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

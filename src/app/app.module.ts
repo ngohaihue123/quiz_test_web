@@ -1,3 +1,4 @@
+import { AlertService } from './services/alert.service';
 import { StudentTestService } from './services/student_test.service';
 import { CreateTestComponent } from './components/teacherfolder/test/create-test.component';
 import { TestService } from './services/test.service';
@@ -19,10 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
-// import {AuthService}
-
-// Layout
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppComponent } from './app.component';
 
 
@@ -30,8 +28,6 @@ import { AppComponent } from './app.component';
 import { LoadingDirective } from './directives/loading.directive';
 import { WaitingComponent } from './directives/loading/loading.component';
 import { WaitingDirective } from './directives/loading/loading.directive';
-
-// Services
 import { AuthGuard } from './guards';
 import { AppRouter } from './routers/app.router';
 import { CommonErrorHandler } from './helpers/error-handler'
@@ -44,6 +40,8 @@ import { StudentComponent } from './components/teacherfolder/student/student/stu
 import { TestComponent } from './components/teacherfolder/test/test/test.component';
 import { HistoryExaminationComponent } from './components/userfolder/history-examination/history-examination.component';
 import { StudentTestComponent } from './components/teacherfolder/student-test/student-test.component';
+import { AlertComponent } from './directives/alert/alert.component';
+import { HistoryTestComponent } from './components/teacherfolder/history-test/history-test.component';
 
 
 @NgModule({
@@ -72,7 +70,9 @@ import { StudentTestComponent } from './components/teacherfolder/student-test/st
     StudentComponent,
     TestComponent,
     HistoryExaminationComponent,
-    StudentTestComponent
+    StudentTestComponent,
+    AlertComponent,
+    HistoryTestComponent
 
     // helpers
 
@@ -85,9 +85,7 @@ import { StudentTestComponent } from './components/teacherfolder/student-test/st
     HttpModule,
     AppRouter,
     HttpClientModule,
-
-
-
+    PdfViewerModule
   ],
   entryComponents: [
     LoadingComponent,
@@ -103,7 +101,8 @@ import { StudentTestComponent } from './components/teacherfolder/student-test/st
     FileService,
     UserService,
     TestService,
-    StudentTestService
+    StudentTestService,
+    AlertService
 
   ],
   bootstrap: [AppComponent],

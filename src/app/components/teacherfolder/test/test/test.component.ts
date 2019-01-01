@@ -56,4 +56,5 @@ export class TestComponent implements OnInit {
   getListStudentDoneTest(testId) {
     this.router.navigate(["teacher/test/history", testId]);
   }
+
 }

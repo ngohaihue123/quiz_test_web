@@ -42,4 +42,7 @@ export class StudentComponent implements OnInit {
   createStudent() {
     this.router.navigate(['teacher/students/add']);
   }
+  getListTestStudentDo(idStudent) {
+    this.router.navigate(["teacher/student/history/", idStudent]);
+  }
 }

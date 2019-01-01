@@ -20,26 +20,20 @@ export class StudentAddComponent implements OnInit {
     if (studentId) {
       this.studentService.getStudentById(studentId).then(res => {
         this.student = res['data'];
-        console.log("student", this.student);
-
       })
 
     }
   }
   save() {
     if (this.student._id) {
-      this.student.gmail = "chequanghuy@gmail.com";
       this.studentService.update(this.student).then(res => {
         if (res && res['success']) {
-          console.log(res);
+
         }
       })
     } else {
-      this.student.name = "Che Quang Huy";
-      this.student.class = 10;
       this.studentService.add(this.student).then(res => {
         if (res && res['success']) {
-          console.log(res);
         }
       })
     }

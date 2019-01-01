@@ -1,3 +1,4 @@
+import { DateTimeHelper } from './../../../helpers/datetime-helper';
 import { Criteria } from './../../../models/criteria.model';
 import { StudentTestService } from './../../../services/student_test.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-test.component.css']
 })
 export class StudentTestComponent implements OnInit {
-  criteria = new Criteria()
+  criteria = new Criteria();
+  students: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private studentTestService: StudentTestService
@@ -30,7 +32,13 @@ export class StudentTestComponent implements OnInit {
   }
   getListStudent(criteria, testId) {
     this.studentTestService.getAllStudentDoTestByTestId(criteria, testId).then(students => {
-      console.log(students);
+      this.students = students.data.tests;
+      this.formatDateTime(this.students);
     })
+  }
+  formatDateTime(tests) {
+    tests.forEach(test => {
+      test.dateCreate = DateTimeHelper.formatDateTimeFromTimeUTC(test.dateCreate, "DD/MM/YYYY");
+    });
   }
 }
