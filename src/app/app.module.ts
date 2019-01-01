@@ -1,3 +1,4 @@
+import { StudentTestService } from './services/student_test.service';
 import { CreateTestComponent } from './components/teacherfolder/test/create-test.component';
 import { TestService } from './services/test.service';
 import { UserService } from './services/user.service';
@@ -41,6 +42,8 @@ import { ShowinfoComponent } from './components/userfolder/userinfo/showinfo/sho
 import { LoginTeacherComponent } from './components/teacherfolder/login/login-teacher.component';
 import { StudentComponent } from './components/teacherfolder/student/student/student.component';
 import { TestComponent } from './components/teacherfolder/test/test/test.component';
+import { HistoryExaminationComponent } from './components/userfolder/history-examination/history-examination.component';
+import { StudentTestComponent } from './components/teacherfolder/student-test/student-test.component';
 
 
 @NgModule({
@@ -67,7 +70,9 @@ import { TestComponent } from './components/teacherfolder/test/test/test.compone
     CreateTestComponent,
     StudentAddComponent,
     StudentComponent,
-    TestComponent
+    TestComponent,
+    HistoryExaminationComponent,
+    StudentTestComponent
 
     // helpers
 
@@ -97,7 +102,8 @@ import { TestComponent } from './components/teacherfolder/test/test/test.compone
     AuthService,
     FileService,
     UserService,
-    TestService
+    TestService,
+    StudentTestService
 
   ],
   bootstrap: [AppComponent],

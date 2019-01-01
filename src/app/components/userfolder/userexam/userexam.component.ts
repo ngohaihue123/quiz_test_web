@@ -1,4 +1,11 @@
+import { DateTimeHelper } from './../../../helpers/datetime-helper';
+import { async } from '@angular/core/testing';
+import { StudentTestService } from './../../../services/student_test.service';
+import { TestService } from './../../../services/test.service';
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { StudentTest } from '../,,/../../../models/student_test.model'
+
 
 @Component({
   selector: 'app-userexam',
@@ -8,13 +15,31 @@ import { Component, OnInit } from '@angular/core';
 export class UserexamComponent implements OnInit {
   result = [];
   finalResult = [];
-  minutes = 90;
+  minutes = 0;
   seconds = 0;
-  minutestr: string = this.minutes + "";
+  test: any;
+  minutestr: string;
   secondstr: string = "0" + this.seconds;
-  constructor() { }
+  studentTest = new StudentTest();
+  constructor(
+    private router: ActivatedRoute,
+    private testService: TestService,
+    private studentTestService: StudentTestService
+  ) { }
   ngOnInit() {
-    this.makeformResult(20);
+    const testId = this.router.snapshot.paramMap.get('testId');
+    this.testService.getTestById(testId).then(test => {
+      if (test && test.success) {
+        this.test = test.data;
+        this.test.dateCreate = DateTimeHelper.formatDateTimeFromTimeUTC(this.test.dateCreate, "DD/MM/YYYY")
+        this.makeformResult(test.data.numberQuestion);
+        this.minutes = test.data.time;
+        this.minutestr = test.data.time + ""
+      }
+
+    })
+
+
   }
 
   changeActive(item, value) {
@@ -38,7 +63,6 @@ export class UserexamComponent implements OnInit {
     }
     let tempAnwser = this.result.find(x => x.id == item.id);
     if (tempAnwser) tempAnwser.value = value;
-    console.log(this.result);
   }
 
   startCountdown() {
@@ -84,6 +108,11 @@ export class UserexamComponent implements OnInit {
         id: x.id,
         value: x.value
       }
+    })
+    this.studentTest.answer = this.finalResult;
+    this.studentTest.student = JSON.parse(localStorage.getItem('i')).idStudent;
+    this.studentTest.test = this.test._id;
+    this.studentTestService.add(this.studentTest).then(data => {
     })
   }
 

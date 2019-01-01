@@ -1,16 +1,6 @@
-// import { AuthService } from 'app/services/auth.service';
-// import { AuthService } from '../../services/auth.service';
 import { AuthService } from '../../../services/auth.service'
-
-// import { AuthService } from '../services/auth.service';
-
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
-
-// import { AuthService } from '../services/auth.service';
-// import {AuthService}
-// import { SharedService } from 'app/services/shared.service';
-
 // 3rd
 // import { toast } from 'angular2-materialize';
 
@@ -42,7 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.username = "ngohaihue96";
+    this.username = "ngohaihue96@gmail.com";
     this.password = "ngohaihue";
     this.type = "user";
     this.loading = true;

@@ -27,7 +27,6 @@ export class CreateTestComponent implements OnInit {
         this.test = res['data'];
         this.showAnwser(this.test.answer);
       })
-
     }
 
 
@@ -46,16 +45,12 @@ export class CreateTestComponent implements OnInit {
       this.fileService.uploadFile(this.formData, 'bg')
         .then(res => {
           this.test.class = 10;
-          this.test.title = "Kiem tra thu";
-          // numberquesttion// 
           this.test.fileTest = res.data;
           this.test.answer = this.getResult(this.result);
           this.testService.add(this.test).then(res => {
-            console.log(res);
           })
         });
     } else {
-      this.test.title = "thay đổi";
       this.test.answer = this.getResult(this.result);
       if (this.isFileChanged) {
         this.getFile();

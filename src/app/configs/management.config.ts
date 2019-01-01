@@ -49,9 +49,6 @@ export class ManagementConfig {
     public static AddContextUrl: string = `${AppConfig.ApiRoot}/admin/context`;
     public static UpdateContextUrl: string = `${AppConfig.ApiRoot}/admin/context`;
     public static DeleteContextUrl: string = `${AppConfig.ApiRoot}/admin/context`;
-
-
-    //Tag
     public static GetUserUrl: string = `${AppConfig.ApiRoot}/user/allUser`;
     public static GetUserByIdUrl: string = `${AppConfig.ApiRoot}/user`;
     public static UpdateUserURl: string = `${AppConfig.ApiRoot}/user/update`
@@ -59,6 +56,10 @@ export class ManagementConfig {
     public static GetTestUrl: string = `${AppConfig.ApiRoot}/test/allTest`;
     public static UpdateTestURl: string = `${AppConfig.ApiRoot}/test/update`
     public static AddTestrUrl: string = `${AppConfig.ApiRoot}/test/add`;
+    public static AddStudentTestrUrl: string = `${AppConfig.ApiRoot}/studentTest/add`;
+    public static GetAllStudentHistoryTestrUrl: string = `${AppConfig.ApiRoot}/studentTest/historyTests`;
+    public static getAllStudentDoTestByTestIdUrl: string = `${AppConfig.ApiRoot}/studentTest/allStudents`;
     public static GetTestByIdUrl: string = `${AppConfig.ApiRoot}/test`;
+    public static GetTestByStudentClassUrl: string = `${AppConfig.ApiRoot}/test/class`;
 
 }

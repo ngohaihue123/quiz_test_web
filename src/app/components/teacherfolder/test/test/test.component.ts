@@ -1,3 +1,4 @@
+import { DateTimeHelper } from './../../../../helpers/datetime-helper';
 import { Criteria } from './../../../../models/criteria.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TestService } from './../../../../services/test.service';
@@ -11,7 +12,7 @@ export class TestComponent implements OnInit {
   criteria = new Criteria();
   loading: boolean;
   tests: any;
-  constructor(private testServcie: TestService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private testService: TestService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     let page = this.activatedRoute.snapshot.params.page;
@@ -25,11 +26,12 @@ export class TestComponent implements OnInit {
   }
   getTest(criteria, studentClass) {
     this.loading = true;
-    this.testServcie.get(criteria, studentClass).then(res => {
+    this.testService.get(criteria, studentClass).then(res => {
       if (res && res['success']) {
         this.criteria = res.data.criteria;
         this.loading = false;
         this.tests = res.data.tests;
+        this.formatDateTime(this.tests);
       } else {
         this.loading = false;
         console.log(res.message);
@@ -38,5 +40,20 @@ export class TestComponent implements OnInit {
   }
   createTest() {
     this.router.navigate(['teacher/test/add']);
+  }
+
+  formatDateTime(tests) {
+    tests.forEach(test => {
+      test.dateCreate = DateTimeHelper.formatDateTimeFromTimeUTC(test.dateCreate, "DD/MM/YYYY");
+    });
+  }
+
+  showDetail(testId) {
+    console.log(testId);
+    this.router.navigate(["/teacher/test", testId]);
+  }
+
+  getListStudentDoneTest(testId) {
+    this.router.navigate(["teacher/test/history", testId]);
   }
 }

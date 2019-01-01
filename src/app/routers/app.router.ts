@@ -1,3 +1,5 @@
+import { StudentTestComponent } from './../components/teacherfolder/student-test/student-test.component';
+import { HistoryExaminationComponent } from './../components/userfolder/history-examination/history-examination.component';
 import { TestComponent } from './../components/teacherfolder/test/test/test.component';
 import { StudentComponent } from './../components/teacherfolder/student/student/student.component';
 import { StudentAddComponent } from './../components/teacherfolder/student/student-add/student-add.component';
@@ -9,13 +11,11 @@ import { ShowinfoComponent } from './../components/userfolder/userinfo/showinfo/
 import { UserinfoComponent } from './../components/userfolder/userinfo/userinfo.component';
 import { UserexamComponent } from './../components/userfolder/userexam/userexam.component';
 import { HomeComponent } from './../components/userfolder/home/home.component';
-
-// import { SpamPromotionComponent } from './../components/home/spam-promotion/spam-promotion.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../components/auth/login';
 import { LoginTeacherComponent } from '../components/teacherfolder/login/login-teacher.component';
-// import { UserComponent } from '../components/userfolder/user/user.component';
+
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
 
     { path: 'user', component: HomeComponent },
-    { path: 'test/1', component: UserexamComponent },
+    { path: 'test/:testId', component: UserexamComponent },
     {
         path: 'userInfo', component: UserinfoComponent,
         children: [
@@ -41,6 +41,7 @@ const routes: Routes = [
             }
         ]
     },
+    { path: 'history', component: HistoryExaminationComponent },
     { path: 'teacher', component: LoginTeacherComponent },
     { path: 'teacher/test/add', component: CreateTestComponent },
     { path: 'teacher/tests', component: TestComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
     { path: 'teacher/students', component: StudentComponent },
     { path: 'teacher/students/student/:id', component: StudentAddComponent },
     { path: 'teacher/students/add', component: StudentAddComponent },
+    { path: 'teacher/test/history/:id', component: StudentTestComponent },
 ];
 
 @NgModule({

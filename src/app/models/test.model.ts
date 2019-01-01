@@ -8,7 +8,7 @@ export class Test {
     fileTest: String;
     answer: any;
     class: Number;
-    numberQuesttion: Number;
+    numberQuestion: Number;
     dateCreate: Date;
 
 }

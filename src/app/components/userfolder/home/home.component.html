@@ -18,7 +18,7 @@
 			<div class="leftheader">
 				<ul>
 					<li><a href="" routerLink="/user">Luyện đề</a></li>
-					<li><a href="">Tải đề lên</a></li>
+					<li><a routerLink="/history">Lịch sử thi</a></li>
 					<li><a routerLink="/userInfo/showInfo">Thông tin cá nhân</a></li>
 					<li><a href="" (click)="logout()">Đăng xuất<span> <img src="../../../../assets/images/logout.png"></span></a></li>
 				</ul>
@@ -46,60 +46,38 @@
 				</div>
 			</div>
 			<div class="rightside">
-				<h1><span class="label label-success">Đề thi mới nhất</span></h1>
-				<div class="listtest">
+				<h1><span class="label label-success">Danh Sách Để Thi</span></h1>
+				<div class="listtest" *ngFor="let test of tests">
 					<div class="test">
-						<a href="">Đề thi vật lí 2018</a>
-						<p><strong>Số câu:</strong>45</p>
-						<p><strong>Ngày tải lên:</strong>12/12/2018</p>
-						<p><strong>Thời gian làm:</strong>90 phút</p>
-						<button class="btn btn-danger center-block" routerLink="/test/1" style="height: 40px;width: 100px;font-size: 16px;display: block;margin:0 auto">Làm
+						<a href="">{{test.title}}</a>
+						<p><strong>Số câu:</strong> {{test.numberQuestion}}</p>
+						<p><strong>Ngày tải lên:</strong> {{test.dateCreate}}</p>
+						<p><strong>Thời gian làm:</strong> {{test.time}} phút</p>
+						<button class="btn btn-danger center-block" style="height: 40px;width: 100px;font-size: 16px;display: block;margin:0 auto"
+						 (click)="doingTest(test._id)">Làm
 							luôn</button>
-					</div>
-					<div class="test">
-						<a href="">Đề thi vật lí 2018</a>
-						<p><strong>Số câu:</strong>45</p>
-						<p><strong>Ngày tải lên:</strong>12/12/2018</p>
-						<p><strong>Thời gian làm:</strong>90 phút</p>
-						<button class="btn btn-danger center-block" routerLink="/test/1" style="height: 40px;width: 100px;font-size: 16px;display: block;margin:0 auto">Làm
-							luôn</button>
-					</div>
-					<div class="test">
-						<a href="">Đề thi vật lí 2018</a>
-						<p><strong>Số câu:</strong>45</p>
-						<p><strong>Ngày tải lên:</strong>12/12/2018</p>
-						<p><strong>Thời gian làm:</strong>90 phút</p>
-						<button class="btn btn-danger center-block" routerLink="/test/1" style="height: 40px;width: 100px;font-size: 16px;display: block;margin:0 auto">Làm
-							luôn</button>
-					</div>
-					<div class="pagi">
-						<ul class="pagination">
-							<li><a href="#">&laquo</a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li class="disabled"><a href="#">&raquo</a></li>
-						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- <div class="footer">
-			<div class="footerleft">
-				<p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
-			</div>
-			<div class="footerright">
-				<p>Các thành viên bao gồm:</p>
-				<ul>
-					<li>Nguyễn Thế Cường</li>
-					<li>Huỳnh Trương Phúc</li>
-					<li>Ngô Hải Huế</li>
-				</ul>
-			</div>
-			<div class="copyright">
-				<p>Copyright. OnlineABCD.com.vn</p>
-			</div>
-		</div> -->
+
+	<div class="footer">
+		<div class="footerleft">
+			<p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
+		</div>
+		<div class="footerright">
+			<p>Các thành viên bao gồm:</p>
+			<ul>
+				<li>Nguyễn Thế Cường</li>
+				<li>Huỳnh Trương Phúc</li>
+				<li>Ngô Hải Huế</li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<p>Copyright. OnlineABCD.com.vn</p>
+		</div>
+	</div>
 </body>
 
 </html>

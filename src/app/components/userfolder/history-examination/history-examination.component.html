@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home user</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="header">
+      <div class="rightheader">
+        <a routerLink="/user" href="">
+          <img src="../../../../assets/images/logo.png">
+          <p>Online ABCD</p>
+        </a>
+      </div>
+      <div class="leftheader">
+        <ul>
+          <li><a href="" routerLink="/user">Luyện đề</a></li>
+          <li><a routerLink="/history">Lịch sử thi</a></li>
+          <li><a routerLink="/userInfo/showInfo">Thông tin cá nhân</a></li>
+          <li><a href="" (click)="logout()">Đăng xuất<span> <img src="../../../../assets/images/logout.png"></span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="leftside">
+        <div class="find">
+          <input type="text" name="" class="form-control" placeholder="Tìm kiếm....">
+          <button class="btn-danger center-block">Tìm kiếm</button>
+        </div>
+        <div class="catolog">
+          <h1>Mục lục</h1>
+          <div class="catologcontent">
+            <ul>
+              <li><a href=""><span class="label label-danger">Mới nhất(10)</span></a>
+              </li>
+              <li>
+                <a href=""><span class="label label-info">Vật lý(7)</span></a></li>
+              <li>
+                <a href=""><span class="label label-primary">50 câu(15)</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rightside">
+        <h1><span class="label label-success">Lịch sử thi</span></h1>
+        <div class="listtest">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Đề thi</th>
+                <th scope="col">Ngày Làm bài</th>
+                <th scope="col">Kết quả </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let test of historyTests ;let i = index;">
+                <th scope="row">{{i}}</th>
+                <td>{{test.test.title}}</td>
+                <td>{{test.dateCreate}}</td>
+                <td>{{test.result}}/{{test.test.numberQuestion}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footerleft">
+      <p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
+    </div>
+    <div class="footerright">
+      <p>Các thành viên bao gồm:</p>
+      <ul>
+        <li>Nguyễn Thế Cường</li>
+        <li>Huỳnh Trương Phúc</li>
+        <li>Ngô Hải Huế</li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>Copyright. OnlineABCD.com.vn</p>
+    </div>
+  </div>
+</body>
+
+</html>
