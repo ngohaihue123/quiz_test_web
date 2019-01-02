@@ -56,5 +56,13 @@ export class TestComponent implements OnInit {
   getListStudentDoneTest(testId) {
     this.router.navigate(["teacher/test/history", testId]);
   }
+  nextPage(): void {
+    if (this.criteria.currentPage < this.criteria.totalPage) this.criteria.currentPage++;
 
+  }
+
+  previousPage(): void {
+    if (this.criteria.currentPage > 1) this.criteria.currentPage--;
+    this.getTest(this.criteria, 10);
+  }
 }

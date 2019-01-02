@@ -1,6 +1,6 @@
 import { Student } from './../../../../models/student.model';
 import { UserService } from './../../../../services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class StudentAddComponent implements OnInit {
   student: Student = new Student();
 
-  constructor(private activaticeRoute: ActivatedRoute, private studentService: UserService) { }
+  constructor(private activaticeRoute: ActivatedRoute, private studentService: UserService, private router: Router) { }
 
   ngOnInit() {
     let studentId = this.activaticeRoute.snapshot.params.id;
@@ -28,12 +28,14 @@ export class StudentAddComponent implements OnInit {
     if (this.student._id) {
       this.studentService.update(this.student).then(res => {
         if (res && res['success']) {
+          this.router.navigate(['/teacher/students'])
 
         }
       })
     } else {
       this.studentService.add(this.student).then(res => {
         if (res && res['success']) {
+          this.router.navigate(['/teacher/students'])
         }
       })
     }

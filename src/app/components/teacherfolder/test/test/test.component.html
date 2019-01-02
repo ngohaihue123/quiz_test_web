@@ -36,6 +36,22 @@
   <div class="row">
     <button type="button" class="btn btn-primary" (click)="createTest()">Tạo mới</button>
   </div>
+
+  <div class="row">
+    <ul class="pagination">
+      <li class="previous" [ngClass]="{'disabled' : criteria.currentPage==1}">
+        <a (click)="previousPage()">
+          Back
+        </a>
+      </li>
+      <li class="page">{{criteria.currentPage}}/{{criteria.totalPage}}</li>
+      <li class="next" [ngClass]="{'disabled' : criteria.currentPage==criteria.totalPage}">
+        <a (click)="nextPage()">
+          Next
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="row">
     <table class="table table-striped">
       <thead>
@@ -59,7 +75,7 @@
       </tbody>
     </table>
   </div>
-  <nav aria-label="Page navigation example">
+  <!-- <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous">
@@ -77,5 +93,5 @@
         </a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 </div>
