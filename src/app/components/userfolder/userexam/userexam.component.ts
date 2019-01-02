@@ -5,7 +5,8 @@ import { TestService } from './../../../services/test.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StudentTest } from '../,,/../../../models/student_test.model'
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-userexam',
@@ -22,23 +23,25 @@ export class UserexamComponent implements OnInit {
   test: any;
   minutestr: string;
   secondstr: string = "0" + this.seconds;
+  url;
   studentTest = new StudentTest();
   constructor(
     private router: ActivatedRoute,
     private testService: TestService,
-    private studentTestService: StudentTestService
+    private studentTestService: StudentTestService,
+    private domSanitizer: DomSanitizer
   ) { }
   ngOnInit() {
     const testId = this.router.snapshot.paramMap.get('testId');
     this.testService.getTestById(testId).then(test => {
       if (test && test.success) {
         this.test = test.data;
+        this.url = this.test.fileTest;
         this.test.dateCreate = DateTimeHelper.formatDateTimeFromTimeUTC(this.test.dateCreate, "DD/MM/YYYY")
         this.makeformResult(test.data.numberQuestion);
         this.minutes = test.data.time;
         this.minutestr = test.data.time + ""
       }
-
     })
 
 
@@ -158,4 +161,12 @@ export class UserexamComponent implements OnInit {
     }
   }
 
+}
+
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) { }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }

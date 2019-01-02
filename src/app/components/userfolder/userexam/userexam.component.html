@@ -48,9 +48,7 @@
 				<h2 id="startBtn">Nhấn <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block';document.getElementById('startBtn').style.display='none'"
 					 style="height: 50px;width: 160px;font-size: 24px;" (click)="startCountdown()">Bắt đầu</button> để làm bài</h2>
 				<div class="viewpdf" style="display: none" id="id01">
-					<iframe width="100%" height="900" src="https://0923d79e.ngrok.io/public/test/upload/bg/undefined_6015d31d-d34b-46b9-ba8b-de6141a7117a.pdf"></iframe>
-					<!-- <img src="http://localhost:3000/express-demo/file/test/upload/bg/aa.png">
-					<embed src="../../../../assets/pdf/myPDF.pdf" width="1000" height="1800"> -->
+					<iframe width="100%" height="900" [src]="url | safe" class="fileTest"></iframe>
 				</div>
 			</div>
 			<div class="rightside">

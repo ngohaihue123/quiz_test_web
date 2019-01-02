@@ -33,7 +33,7 @@ import { AppRouter } from './routers/app.router';
 import { CommonErrorHandler } from './helpers/error-handler'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UserexamComponent } from './components/userfolder/userexam/userexam.component';
+import { UserexamComponent, SafePipe } from './components/userfolder/userexam/userexam.component';
 import { ShowinfoComponent } from './components/userfolder/userinfo/showinfo/showinfo.component';
 import { LoginTeacherComponent } from './components/teacherfolder/login/login-teacher.component';
 import { StudentComponent } from './components/teacherfolder/student/student/student.component';
@@ -58,7 +58,7 @@ import { HistoryTestComponent } from './components/teacherfolder/history-test/hi
     ShowinfoComponent,
     UpdateinfoComponent,
     HomeComponent,
-
+    SafePipe,
 
     // directives
     LoadingComponent,
