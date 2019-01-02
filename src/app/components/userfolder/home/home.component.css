@@ -106,6 +106,7 @@ body
 	height: 800px;
 	float: right;
 	width: 70%;
+	overflow: scroll;
 }
 .catolog{
 	border-top: 2px solid #26A65B;
