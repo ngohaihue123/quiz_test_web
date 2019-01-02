@@ -4,6 +4,7 @@
 <head>
 	<title>Home user</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../../../../assets/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -34,19 +35,19 @@
 					<h1>Mục lục</h1>
 					<div class="catologcontent">
 						<ul>
-							<li><a href=""><span class="label label-danger">Mới nhất(10)</span></a>
+							<li><a href="http://localhost:4200/#/user"><span class="label label-danger">Mới nhất(10)</span></a>
 							</li>
 							<li>
-								<a href=""><span class="label label-info">Vật lý(7)</span></a></li>
+								<a href="http://localhost:4200/#/user"><span class="label label-info">Vật lý(7)</span></a></li>
 							<li>
-								<a href=""><span class="label label-primary">50 câu(15)</span></a>
+								<a href="http://localhost:4200/#/user"><span class="label label-primary">50 câu(15)</span></a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="rightside">
-				<h1><span class="label label-success">Danh Sách Để Thi</span></h1>
+				<h1>Danh Sách Đề Thi</h1>
 				<div class="listtest" *ngFor="let test of tests">
 					<div class="test">
 						<a href="">{{test.title}}</a>

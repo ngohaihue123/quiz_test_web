@@ -1,8 +1,36 @@
-<button type="button" class="btn btn-primary" (click)="createStudent()">Tạo mới</button>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home user</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="header">
+      <div class="rightheader">
+        <a routerLink="/user" href="">
+          <img src="../../../../assets/images/logo.png">
+          <p>Online ABCD</p>
+        </a>
+      </div>
+      <div class="leftheader">
+        <ul>
+          <li><a href="" routerLink="/teacher/tests">Đề thi</a></li>
+          <li><a routerLink="/teacher/students">Học sinh</a></li>
+          <li><a routerLink="/teacher">Đăng xuất</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Danh sách học sinh</h1>
+      <button type="button" class="btn btn-lg btn-primary" (click)="createStudent()">Tạo mới</button>
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
 <table class="table table-striped">
@@ -20,8 +48,8 @@
       <th scope="row">{{i}}</th>
       <td>{{student.name}}</td>
       <td>{{student.gmail}}</td>
-      <td><button type="button" class="btn btn-primary" (click)="getListTestStudentDo(student._id)">Lịch sử thi</button></td>
-      <td> <button type="button" class="btn btn-info"><a [routerLink]="['/teacher/students/student',student._id]">Chi
+      <td><button type="button" class="btn btn-lg btn-primary" (click)="getListTestStudentDo(student._id)">Lịch sử thi</button></td>
+      <td> <button type="button" class="btn btn-lg btn-info"><a [routerLink]="['/teacher/students/student',student._id]">Chi
             tiết</a></button></td>
     </tr>
   </tbody>
@@ -45,3 +73,25 @@
     </li>
   </ul>
 </nav>
+  </div>
+</div>
+
+  <div class="footer">
+    <div class="footerleft">
+      <p>Website xây dựng phục vụ môn học Thực tập công nhân</p>
+    </div>
+    <div class="footerright">
+      <p>Các thành viên bao gồm:</p>
+      <ul>
+        <li>Nguyễn Thế Cường</li>
+        <li>Huỳnh Trương Phúc</li>
+        <li>Ngô Hải Huế</li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>Copyright. OnlineABCD.com.vn</p>
+    </div>
+  </div>
+</body>
+
+</html>
